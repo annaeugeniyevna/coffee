@@ -9,4 +9,70 @@
   --color-light-gray: #D9D9D9;
   --color-off-white: #F1F0EE;
   --color-white: #FFFFFF;
+
+
+  --font-playfair: 'Playfair Display', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+  --font-reggae: 'Reggae One', sans-serif;
+}
+
+@font-face {
+  font-family: 'Playfair Display', sans-serif;
+  src: url('./assets/fonts/PlayfairDisplay-Medium.woff2') format('woff2');
+  fons-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display', sans-serif;
+  src: url('./assets/fonts/PlayfairDisplay-SemiBold.woff2') format('woff2');
+  fons-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display', sans-serif;
+  src: url('./assets/fonts/PlayfairDisplay-Bold.woff2') format('woff2');
+  fons-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins', sans-serif;
+  src: url('./assets/fonts/Poppins-Regular.woff2') format('woff2');
+  fons-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins', sans-serif;
+  src: url('./assets/fonts/Poppins-Medium.woff2') format('woff2');
+  fons-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins', sans-serif;
+  src: url('./assets/fonts/Poppins-SemiBold.woff2') format('woff2');
+  fons-style: normal;
+}
+
+@font-face {
+  font-family: 'Outfit', sans-serif;
+  src: url('./assets/fonts/Outfit-Regular.woff2') format('woff2');
+  fons-style: normal;
+}
+
+@font-face {
+  font-family: 'Outfit', sans-serif;
+  src: url('./assets/fonts/Outfit-Medium.woff2') format('woff2');
+  fons-style: normal;
+}
+
+@font-face {
+  font-family: 'Outfit', sans-serif;
+  src: url('./assets/fonts/Outfit-SemiBold.woff2') format('woff2');
+  fons-style: normal;
+}
+
+@font-face {
+  font-family: 'Reggae One', sans-serif;
+  src: url('./assets/fonts/ReggaeOne-Regular.woff2') format('woff2');
+  fons-style: normal;
 }
