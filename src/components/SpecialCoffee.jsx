@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import Loading from "./Loading"
 
 export default function SpecialCoffee () {
     const [coffees, setCoffees] = useState([]);
@@ -14,12 +15,14 @@ export default function SpecialCoffee () {
     }, []);
 
     if (loading) {
-        return <div>Завантаження...</div>;
+        return (
+            <Loading/>
+        )
     }
 
     return (
         <section
-        className="mt-10">
+        className="mt-15 mb-15">
             <div
             className="max-w-[1440px] mx-auto px-[5%]">
                 <h2
@@ -40,7 +43,7 @@ export default function SpecialCoffee () {
                                 <img
                                 src={imageUrl}
                                 alt={title}
-                                className="max-w-[290px] mb-4"/>
+                                className="max-w-[275px] mb-4"/>
                                 <h3
                                 className="font-outfit font-semibold text-3xl text-primary mb-2">
                                     {title}

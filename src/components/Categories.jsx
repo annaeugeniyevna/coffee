@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import Loading from "./Loading"
 
 const CategoriesMenu = () => {
     const [categories, setCategories] = useState([]);
@@ -17,7 +18,11 @@ const CategoriesMenu = () => {
         });
     }, []);
 
-    if (loading) return <div>Завантаження меню...</div>
+    if (loading) {
+        return (
+            <Loading/>
+        )
+    }
     return (
         <section className="bg-beige pt-5 pb-5">
             <div

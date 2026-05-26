@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import Loading from "./Loading"
 
 export default function Hero () {
     const [heroData, setHeroData] = useState({
@@ -31,7 +32,9 @@ export default function Hero () {
     }, []);
 
     if (loading) {
-        return <div>Завантаження...</div>
+        return (
+            <Loading/>
+        )
     }
 
     return (
