@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 import Loading from "./Loading"
 
-export default function SpecialCoffee () {
+export default function SpecialDessert () {
     const [coffees, setCoffees] = useState([]);
     const [loading, setLoading] = useState(true);
 
