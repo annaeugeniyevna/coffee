@@ -4,6 +4,7 @@ import Categories from './components/Categories'
 import SpecialCoffee from "./components/SpecialCoffee"
 import SpecialDessert from "./components/SpecialDessert"
 import CoffeeBeans from "./components/CoffeeBeans"
+import Testimonials from "./components/Testimonials"
 
 const App = () => {
 
@@ -16,6 +17,7 @@ const App = () => {
         <SpecialCoffee/>
         <SpecialDessert/>
         <CoffeeBeans/>
+        <Testimonials/>
       </main>
     </>
   )
