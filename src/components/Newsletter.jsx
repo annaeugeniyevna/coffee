@@ -1,0 +1,83 @@
+import {useState, useEffect} from 'react'
+import axios from 'axios'
+import Loading from "./Loading"
+import emailIcon from "../assets/images/email-icon.svg"
+
+export default function Newsletter () {
+    const [newsData, setNewsData] = useState({
+        title: '',
+        text: '',
+        bg_image: ''
+    });
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        axios.get('http://coffea.local/wp-json/wp/v2/pages?slug=home')
+        .then(res => {
+            if (res.data && res.data.length > 0) {
+                const page = res.data[0];
+
+                setNewsData({
+                    title: page.acf?.newsletter_title || 'Дефолтний заголовок',
+                    text: page.acf?.newsletter_text || 'Дефолтний опис',
+                    bg_image: 'http://coffea.local/wp-content/uploads/2026/05/newsletter-bg.png'
+                });
+            }
+            setLoading(false);
+        })
+        .catch(err => {
+            console.error("Помилка:", err);
+            setLoading(false);
+        });
+    }, []);
+
+    if (loading) {
+        return (
+            <Loading/>
+        )
+    }
+
+    return (
+        <section
+        style={{
+            backgroundImage: `url('${newsData.bg_image}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+        }}
+        className="h-[450px] py-22">
+            <div
+            className="max-w-[1440px] mx-auto px-[5%]">
+                <div>
+                    <h1
+                    className="font-poppins font-semibold text-4xl text-primary text-center mb-2">
+                        {newsData.title}
+                    </h1>
+                    <p
+                    className="font-poppins font-medium text-base text-primary text-center mb-6">
+                        {newsData.text}
+                    </p>
+                    <div
+                    className="flex flex-col gap-3">
+                        <div
+                        className="flex gap-2 items-center bg-off-white rounded-full px-6 py-3">
+                            <img
+                            src={emailIcon}
+                            alt="Email icon"/>
+                            <input
+                            type="email"
+                            placeholder="Email address"
+                            required
+                            className="font-poppins font-semibold text-base text-primary focus:outline-none placeholder:font-poppins placeholder:font-semibold placeholder:text-base placeholder:text-primary"/>
+                        </div>
+                        <button
+                        type="submit"
+                        className="font-poppins font-semibold text-lg text-off-white bg-primary px-7 py-3 rounded-full w-max mx-auto">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}

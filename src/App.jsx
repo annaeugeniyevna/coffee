@@ -5,6 +5,7 @@ import SpecialCoffee from "./components/SpecialCoffee"
 import SpecialDessert from "./components/SpecialDessert"
 import CoffeeBeans from "./components/CoffeeBeans"
 import Testimonials from "./components/Testimonials"
+import Newsletter from "./components/Newsletter"
 
 const App = () => {
 
@@ -18,6 +19,7 @@ const App = () => {
         <SpecialDessert/>
         <CoffeeBeans/>
         <Testimonials/>
+        <Newsletter/>
       </main>
     </>
   )
