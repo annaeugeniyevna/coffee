@@ -28,7 +28,8 @@ const CategoriesMenu = () => {
             <div
             className="max-w-[1440px] mx-auto px-[5%]">
                 <div
-                className="flex justify-center gap-4">
+                className="flex justify-center gap-4
+                md:gap-15">
                     {categories.map((category) => (
                         <div
                         key={category.id}>
