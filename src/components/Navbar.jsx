@@ -8,6 +8,7 @@ import searchIcon from "../assets/images/search-icon.svg"
 export default function Navbar () {
     const [menuItems, setMenuItems] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     useEffect(() => {
         axios.get('http://coffea.local/wp-json/menus/v1/menus/header-menu')
@@ -33,7 +34,7 @@ export default function Navbar () {
             <div
             className="max-w-[1440px] mx-auto px-[5%]">
                 <nav
-                className="flex justify-between items-center py-3">
+                className="relative flex justify-between items-center py-3">
                     <div>
                         <a
                         href="#"
@@ -41,48 +42,56 @@ export default function Navbar () {
                             coffee
                         </a>
                     </div>
-
-                    {/* Menu for desktop
-                    <div
-                    className="hidden">
-                        {menuItems.map((item, index) => (
-                            <a
-                            key={index}
-                            href={item.url}
-                            className="font-poppins font-medium text-lg text-white uppercase">
-                                {item.title}
-                            </a>
-                        ))}
-                    </div> */}
-
                     <div
                     className="flex items-center gap-3">
-                        {/* Button for mobile */}
-                        <button 
-                            className="block relative z-[1000]
-                            lg:hidden"
-                            onClick={() => { 
-                                setIsOpen(!isOpen)}}>
-                                {isOpen ? (
-                                <X className="w-8 h-8 text-white"
-                                aria-label="Toggle menu"/>
-                            ) : (
-                                <CiMenuBurger  
-                                className="w-8 h-8 text-white"
-                                aria-label="Toggle menu"/>
-                            )
-                        }
-                        </button>
-                        <a href="/">
-                            <img
-                            src={searchIcon} alt="Search"
-                            className="w-[40px]"/>
-                        </a>
-                    </div>
+                        <div>
+                            {/* Button for mobile */}
+                            <button 
+                                className="block relative z-[1000]
+                                lg:hidden"
+                                onClick={() => { 
+                                    setIsOpen(!isOpen)}}>
+                                    {isOpen ? (
+                                    <X className="w-8 h-8 text-white"
+                                    aria-label="Toggle menu"/>
+                                ) : (
+                                    <CiMenuBurger  
+                                    className="w-8 h-8 text-white"
+                                    aria-label="Toggle menu"/>
+                                )
+                            }
+                            </button>
+
+                            {/* Logic for Search */}
+                            {isSearchOpen && (
+                                <div
+                                className="absolute inset-0 bg-white rounded-full z-50 flex itemc-center gap-4 px-6 py-3">
+                                    <input
+                                    type="text"
+                                    placeholder="Search..."
+                                    className="w-full focus:outline-none placeholder:font-outfit placeholder:font-medium placeholder:text-lg placeholder:text-light-gray"
+                                    autoFocus/>
+                                    <button
+                                    onClick={() => setIsSearchOpen(false)}
+                                    className="text-light-gray">
+                                        <X
+                                        className="w-8 h-8"/>
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+                            <button
+                            onClick={() => setIsSearchOpen(true)}>
+                                <img
+                                src={searchIcon} 
+                                alt="Search"
+                                className="w-[40px]"/>
+                            </button>
+                        </div>
 
                     {/* Mobile menu */}
                     <div
-                    className={`${isOpen ? 'block' : 'hidden'} bg-mud rounded-l-2xl fixed top-20 right-0 w-[200px] h-[450px] px-4 py-5`}>
+                    className={`${isOpen ? 'block' : 'hidden'} bg-mud rounded-l-2xl fixed top-20 right-0 w-[200px] h-[350px] px-4 py-5`}>
                         <div
                         className="flex flex-col gap-5 items-center">
                         {menuItems && menuItems.length > 0 ? (
@@ -115,7 +124,7 @@ export default function Navbar () {
                             menuItems.map((item, index) => {
                                 const itemTitle = item.title || item.name ||'Пункт';
                                 const itemUrl = item.url || item.href || '/';
-
+                                
                                 return (
                                     <a 
                                     key={`menu-item-${index}-${itemTitle}`}
@@ -129,6 +138,18 @@ export default function Navbar () {
                         ) : (
                             <span>Меню порожнє</span>
                         )}
+                        {/* Menu for desktop
+                        <div
+                        className="hidden">
+                            {menuItems.map((item, index) => (
+                                <a
+                                key={index}
+                                href={item.url}
+                                className="font-poppins font-medium text-lg text-white uppercase">
+                                    {item.title}
+                                </a>
+                            ))}
+                        </div> */}
                     </div>
                 </nav>
             </div>
