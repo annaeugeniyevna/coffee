@@ -48,9 +48,11 @@ export default function Hero () {
         className="h-[650px] pt-15">
             <div
             className="max-w-[1440px] mx-auto px-[5%]">
-                <div>
+                <div
+                className="md:max-w-[380px]">
                     <div
-                    className="text-center mt-20">
+                    className="text-center mt-20
+                    md:text-left">
                         <span
                         className="font-outfit font-medium text-lg text-white uppercase">
                             Welcome
@@ -62,11 +64,13 @@ export default function Hero () {
                         </h1>
                     </div>
                     <p
-                    className="font-outfit font-regular text-base text-white text-center mb-16">
+                    className="font-outfit font-regular text-base text-white text-center mb-16
+                    md:text-left">
                         {heroData.subtitle}
                     </p>
                     <div
-                    className="text-center">
+                    className="text-center
+                    md:text-left">
                         <a
                         href="/"
                         className="font-outfit font-medium text-lg text-primary bg-white py-4 px-8 rounded-full">
