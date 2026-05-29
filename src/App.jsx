@@ -6,6 +6,7 @@ import SpecialDessert from "./components/SpecialDessert"
 import CoffeeBeans from "./components/CoffeeBeans"
 import Testimonials from "./components/Testimonials"
 import Newsletter from "./components/Newsletter"
+import Footer from "./components/Footer"
 
 const App = () => {
 
@@ -21,6 +22,7 @@ const App = () => {
         <Testimonials/>
         <Newsletter/>
       </main>
+      <Footer/>
     </>
   )
 }
