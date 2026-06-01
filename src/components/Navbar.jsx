@@ -32,7 +32,8 @@ export default function Navbar () {
         <header
         className="bg-black/60 fixed top-0 w-full z-[999]">
             <div
-            className="max-w-[1440px] mx-auto px-[5%]">
+            className="max-w-[1440px] mx-auto px-[5%]
+            lg:px-[7%]">
                 <nav
                 className="relative flex justify-between items-center py-3">
                     <div>

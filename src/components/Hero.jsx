@@ -48,7 +48,8 @@ export default function Hero () {
         className="h-[650px] pt-15
         lg:pt-43 lg:h-[1000px]">
             <div
-            className="max-w-[1440px] mx-auto px-[5%]">
+            className="max-w-[1440px] mx-auto px-[5%]
+            lg:px-[7%]">
                 <div
                 className="md:max-w-[380px] lg:max-w-[500px]">
                     <div
