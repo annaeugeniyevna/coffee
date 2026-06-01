@@ -11,6 +11,10 @@ export default function SpecialDessert () {
         .then(response => {
             setCoffees(response.data);
             setLoading(false);
+        })
+        .catch(err => {
+            console.error("Помилка завантаження Special Coffee:", err);
+            setLoading(false);
         });
     }, []);
 
@@ -22,15 +26,17 @@ export default function SpecialDessert () {
 
     return (
         <section
-        className="pb-15">
+        className="pb-15 md:pb-20">
             <div
             className="max-w-[1440px] mx-auto px-[5%]">
                 <h2
-                className="font-playfair font-semibold text-2xl text-primary text-center uppercase mb-6">
+                className="font-playfair font-semibold text-2xl text-primary text-center uppercase mb-6
+                md:text-3xl md:mb-16">
                     Our Special Dessert
                 </h2>
                 <div 
-                className="flex flex-col gap-3">
+                className="relative flex gap-5 overflow-x-auto scrollbar-none snap-x snap-mandatory scroll-smooth"
+                style={{WebkitOverflowScrolling: 'touch'}}>
                     {coffees.map((coffee) => {
                         const title = coffee.title.rendered;
                         const price = coffee.acf?.price || '0';
@@ -39,7 +45,7 @@ export default function SpecialDessert () {
                         return (
                             <div
                             key={coffee.id}
-                            className="px-4 py-4 bg-off-white border-2 border-beige rounded-2xl">
+                            className="px-4 py-4 bg-off-white border-2 border-beige rounded-2xl snap-center">
                                 <img
                                 src={imageUrl}
                                 alt={title}
