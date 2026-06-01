@@ -45,11 +45,12 @@ export default function Hero () {
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
         }}
-        className="h-[650px] pt-15">
+        className="h-[650px] pt-15
+        lg:pt-43 lg:h-[1000px]">
             <div
             className="max-w-[1440px] mx-auto px-[5%]">
                 <div
-                className="md:max-w-[380px]">
+                className="md:max-w-[380px] lg:max-w-[500px]">
                     <div
                     className="text-center mt-20
                     md:text-left">
@@ -59,17 +60,19 @@ export default function Hero () {
                         </span>
                         <h1
                         className="font-playfair font-bold text-5xl text-white
-                        leading-snug mt-2 mb-8">
+                        leading-snug mt-2 mb-8
+                        lg:mt-6 lg:mb-10 lg:text-6xl">
                             {heroData.title}
                         </h1>
                     </div>
                     <p
                     className="font-outfit font-regular text-base text-white text-center mb-16
-                    md:text-left">
+                    md:text-left
+                    lg:max-w-[380px] lg:leading-relaxed">
                         {heroData.subtitle}
                     </p>
                     <div
-                    className="text-center
+                    className="text-center hover:scale-105 transition-all duration-200
                     md:text-left">
                         <a
                         href="/"
