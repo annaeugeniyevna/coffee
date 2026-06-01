@@ -52,12 +52,14 @@ export default function CoffeeBeans () {
                     className="text-center">
                         <h1
                         className="font-playfair font-semibold text-4xl text-black
-                        leading-snug mt-6 mb-7">
+                        leading-snug mt-6 mb-7
+                        md:max-w-[370px] md:text-left">
                             {beansData.title}
                         </h1>
                     </div>
                     <div
-                    className="flex justify-center">
+                    className="flex justify-center
+                    md:justify-start">
                         <a
                         href="/"
                         className="font-outfit font-medium text-base text-white bg-primary py-4 px-9 rounded-full flex items-center gap-1 w-max">
