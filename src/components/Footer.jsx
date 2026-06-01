@@ -55,7 +55,8 @@ export default function Footer () {
                     className="mb-8">
                         <a
                         href="#"
-                        className="font-playfair font-bold text-3xl text-white">
+                        className="font-playfair font-bold text-3xl text-white
+                        md:text-4xl">
                             Coffee
                         </a>
                     </div>
@@ -63,7 +64,8 @@ export default function Footer () {
                     className="grid grid-cols-2 gap-6">
                         <div>
                             <h3
-                            className="font-playfair font-medium text-base text-white uppercase mb-5">
+                            className="font-playfair font-medium text-base text-white uppercase mb-5
+                            md:text-2xl">
                                 {footerMenu.privacyTitle}
                             </h3>
                             <ul>
@@ -73,7 +75,8 @@ export default function Footer () {
                                     className="mb-3">
                                         <a 
                                         href="/"
-                                        className="font-poppins font-regular text-xs text-white">
+                                        className="font-poppins font-regular text-xs text-white
+                                        md:text-base">
                                             {link}
                                         </a>
                                     </li>
@@ -82,7 +85,8 @@ export default function Footer () {
                         </div>
                         <div>
                             <h3
-                            className="font-playfair font-medium text-base text-white uppercase mb-5">
+                            className="font-playfair font-medium text-base text-white uppercase mb-5
+                             md:text-2xl">
                                 {footerMenu.servicesTitle}
                             </h3>
                             <ul>
@@ -92,7 +96,8 @@ export default function Footer () {
                                     className="mb-3">
                                         <a 
                                         href="/"
-                                        className="font-poppins font-regular text-xs text-white">
+                                        className="font-poppins font-regular text-xs text-white
+                                         md:text-base">
                                             {link}
                                         </a>
                                     </li>
@@ -101,7 +106,8 @@ export default function Footer () {
                         </div>
                         <div>
                             <h3
-                            className="font-playfair font-medium text-base text-white uppercase mb-5">
+                            className="font-playfair font-medium text-base text-white uppercase mb-5
+                             md:text-2xl">
                                 {footerMenu.aboutTitle}
                             </h3>
                             <ul>
@@ -111,7 +117,8 @@ export default function Footer () {
                                     className="mb-3">
                                         <a 
                                         href="/"
-                                        className="font-poppins font-regular text-xs text-white">
+                                        className="font-poppins font-regular text-xs text-white
+                                         md:text-base">
                                             {link}
                                         </a>
                                     </li>
@@ -120,7 +127,8 @@ export default function Footer () {
                         </div>
                         <div>
                             <h3
-                            className="font-playfair font-medium text-base text-white uppercase mb-5">
+                            className="font-playfair font-medium text-base text-white uppercase mb-5
+                             md:text-2xl">
                                 {footerMenu.infoTitle}
                             </h3>
                             <ul>
@@ -130,7 +138,8 @@ export default function Footer () {
                                     className="mb-3">
                                         <a 
                                         href="/"
-                                        className="font-poppins font-regular text-xs text-white">
+                                        className="font-poppins font-regular text-xs text-white
+                                         md:text-base">
                                             {link}
                                         </a>
                                     </li>
@@ -139,7 +148,8 @@ export default function Footer () {
                         </div>
                         <div>
                             <h3
-                            className="font-playfair font-medium text-base text-white uppercase mb-5">
+                            className="font-playfair font-medium text-base text-white uppercase mb-5
+                             md:text-2xl">
                                 Social media
                             </h3>
                             <div
