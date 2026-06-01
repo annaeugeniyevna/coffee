@@ -42,6 +42,28 @@ export default function Navbar () {
                             coffee
                         </a>
                     </div>
+                    {/* Desctop menu */}
+                    <div
+                    className="hidden lg:flex lg:items-center lg:mx-auto lg:gap-10">
+                        {menuItems && menuItems.length > 0 ? (
+                            menuItems.map((item, index) => {
+                                const itemTitle = item.title || item.name ||'Пункт';
+                                const itemUrl = item.url || item.href || '/';
+                                
+                                return (
+                                    <a 
+                                    key={`menu-item-${index}-${itemTitle}`}
+                                    href={itemUrl}
+                                    className="font-poppins font-medium text-base text-white uppercase hover:scale-110"
+                                    >
+                                        {itemTitle}
+                                    </a>
+                                );
+                            })
+                        ) : (
+                            <span>Меню порожнє</span>
+                        )}
+                    </div>
                     <div
                     className="flex items-center gap-3">
                         <div>
@@ -65,7 +87,8 @@ export default function Navbar () {
                             {/* Logic for Search */}
                             {isSearchOpen && (
                                 <div
-                                className="absolute inset-0 bg-white rounded-full z-50 flex itemc-center gap-4 px-6 py-3">
+                                className=" absolute inset-0 bg-white rounded-full z-50 flex items-center text-center gap-4 px-6 py-3
+                                 md:h-[45px] md:mt-3">
                                     <input
                                     type="text"
                                     placeholder="Search..."
@@ -85,7 +108,7 @@ export default function Navbar () {
                                 <img
                                 src={searchIcon} 
                                 alt="Search"
-                                className="w-[40px]"/>
+                                className="w-[40px] cursor-pointer hover:scale-110"/>
                             </button>
                         </div>
 
@@ -117,27 +140,6 @@ export default function Navbar () {
                         </div>
                     </div>
 
-                    {/* Desctop menu */}
-                    <div
-                    className="hidden lg:flex">
-                        {menuItems && menuItems.length > 0 ? (
-                            menuItems.map((item, index) => {
-                                const itemTitle = item.title || item.name ||'Пункт';
-                                const itemUrl = item.url || item.href || '/';
-                                
-                                return (
-                                    <a 
-                                    key={`menu-item-${index}-${itemTitle}`}
-                                    href={itemUrl}
-                                    className="text-red-500 font-poppins font-bold"
-                                    >
-                                        {itemTitle}
-                                    </a>
-                                );
-                            })
-                        ) : (
-                            <span>Меню порожнє</span>
-                        )}
                         {/* Menu for desktop
                         <div
                         className="hidden">
@@ -150,7 +152,6 @@ export default function Navbar () {
                                 </a>
                             ))}
                         </div> */}
-                    </div>
                 </nav>
             </div>
         </header>
