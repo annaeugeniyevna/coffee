@@ -26,8 +26,8 @@ export default function SpecialCoffee () {
 
     return (
         <section
-        className="mt-15 mb-15
-        md:mt-20 md:mb-20">
+        className="py-15 bg-light-blue
+        md:py-20">
             <div
             className="max-w-[1440px] mx-auto px-[5%]">
                 <h2

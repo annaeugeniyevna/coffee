@@ -60,14 +60,16 @@ export default function Testimonials () {
 
     return (
         <section
-        className="mb-15">
+        className="py-15 bg-light-blue">
             <div
             className="max-w-[1440px] mx-auto px-[5%]">
                 <h2
-                className="font-reggae font-regular text-2xl text-primary  text-center flex flex-col gap-3 mb-8">
+                className="font-reggae font-regular text-2xl text-primary  text-center flex flex-col gap-3 mb-8
+                md:text-3xl">
                     Come and Join
                     <span
-                    className="font-playfair font-semibold text-2xl text-primary uppercase">
+                    className="font-playfair font-semibold text-2xl text-primary uppercase
+                    md:text-3xl">
                     Our happy Customers
                     </span>
                 </h2>
@@ -76,24 +78,26 @@ export default function Testimonials () {
                     <div
                     ref={sliderRef}
                     onScroll={handleScroll}
-                    className="flex gap-4 overflow-x-auto scrollbar-none snap-x snap-mandatory scroll-smooth"
+                    className="flex gap-4 overflow-x-auto scrollbar-none snap-x snap-mandatory scroll-smooth
+                    md:gap-21"
                     style={{WebkitOverflowScrolling: 'touch'}}>
                         {reviews.map((rev, index) => (
                             <div
                             key={index}
-                            className="w-full flex-shrink-0 snap-center bg-off-white border border-beige rounded-2xl px-3 py-5">
+                            className="max-w-[324px] flex-shrink-0 snap-center bg-off-white border border-beige rounded-2xl px-3 py-5
+                            md:max-w-[417px] md:px-7 md:py-7">
                                 <div
                                 className="flex items-center justify-between mb-4">
                                     <div
                                     className="flex gap-1">
                                         <img
                                         src={cardIcon}
-                                        alt="Testimonial icon"
-                                        className=""/>
+                                        alt="Testimonial icon"/>
                                         <div
                                         className="mt-2">
                                             <h3
-                                            className="font-poppins font-semibold text-base text-primary">
+                                            className="font-poppins font-semibold text-base text-primary
+                                            md:text-lg">
                                                 {rev.name}     
                                             </h3>
                                             <p
@@ -134,7 +138,8 @@ export default function Testimonials () {
                     {reviews.map((_, index) => (
                         <div
                         key={index}
-                        className={`w-2 h-2 rounded-full transition-all duration-300 ${activeIndex === index ? 'w-3 h-3 bg-gray-800' : 'w-2 bg-gray-300'}`}/>
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${activeIndex === index ? 'w-3 h-3 bg-gray-800' : 'w-2 bg-gray-300'}
+                            md:w-3 md:h-3`}/>
                     ))}
                 </div>
             </div>

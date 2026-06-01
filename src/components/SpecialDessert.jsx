@@ -26,7 +26,7 @@ export default function SpecialDessert () {
 
     return (
         <section
-        className="pb-15 md:pb-20">
+        className="pb-15 bg-light-blue md:pb-20">
             <div
             className="max-w-[1440px] mx-auto px-[5%]">
                 <h2

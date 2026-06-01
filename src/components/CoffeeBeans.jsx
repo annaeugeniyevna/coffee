@@ -44,7 +44,7 @@ export default function CoffeeBeans () {
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
         }}
-        className="h-[370px] pt-18 mb-15">
+        className="h-[370px] pt-18">
             <div
             className="max-w-[1440px] mx-auto px-[5%]">
                 <div>
