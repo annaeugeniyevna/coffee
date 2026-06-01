@@ -45,12 +45,15 @@ export default function Newsletter () {
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
         }}
-        className="h-[450px] py-22">
+        className="h-[450px] py-22
+        md:h-[340px]">
             <div
             className="max-w-[1440px] mx-auto px-[5%]">
-                <div>
+                <div
+                className="md:max-w-[550px] md:mx-auto">
                     <h1
-                    className="font-poppins font-semibold text-4xl text-primary text-center mb-2">
+                    className="font-poppins font-semibold text-4xl text-primary text-center mb-2
+                    md:mb-4">
                         {newsData.title}
                     </h1>
                     <p
@@ -58,9 +61,10 @@ export default function Newsletter () {
                         {newsData.text}
                     </p>
                     <div
-                    className="flex flex-col gap-3">
+                    className="flex flex-col gap-3
+                    md:flex-row object-cover">
                         <div
-                        className="flex gap-2 items-center bg-off-white rounded-full px-6 py-3">
+                        className="flex gap-2 items-center flex-grow bg-off-white rounded-full px-6 py-3 max-w-[390px]">
                             <img
                             src={emailIcon}
                             alt="Email icon"/>
