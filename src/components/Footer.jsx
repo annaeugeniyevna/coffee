@@ -52,7 +52,8 @@ export default function Footer () {
             className="max-w-[1440px] mx-auto px-[5%]">
                 <div>
                     <div
-                    className="mb-8">
+                    className="mb-8
+                    lg:mb-15">
                         <a
                         href="#"
                         className="font-playfair font-bold text-3xl text-white
@@ -61,18 +62,21 @@ export default function Footer () {
                         </a>
                     </div>
                     <div
-                    className="grid grid-cols-2 gap-6">
+                    className="grid grid-cols-2 gap-6
+                    lg:grid-cols-5">
                         <div>
                             <h3
                             className="font-playfair font-medium text-base text-white uppercase mb-5
-                            md:text-2xl">
+                            md:text-2xl
+                            lg:mb-6">
                                 {footerMenu.privacyTitle}
                             </h3>
                             <ul>
                                 {footerMenu.privacy.map((link, i) => (
                                     <li 
                                     key={i}
-                                    className="mb-3">
+                                    className="mb-3
+                                    lg:mb-4 hover:scale-105 transition-all duration-200">
                                         <a 
                                         href="/"
                                         className="font-poppins font-regular text-xs text-white
@@ -86,14 +90,16 @@ export default function Footer () {
                         <div>
                             <h3
                             className="font-playfair font-medium text-base text-white uppercase mb-5
-                             md:text-2xl">
+                            md:text-2xl
+                            lg:mb-6">
                                 {footerMenu.servicesTitle}
                             </h3>
                             <ul>
                                 {footerMenu.services.map((link, i) => (
                                     <li 
                                     key={i}
-                                    className="mb-3">
+                                    className="mb-3
+                                    lg:mb-4 hover:scale-105 transition-all duration-200">
                                         <a 
                                         href="/"
                                         className="font-poppins font-regular text-xs text-white
@@ -107,14 +113,16 @@ export default function Footer () {
                         <div>
                             <h3
                             className="font-playfair font-medium text-base text-white uppercase mb-5
-                             md:text-2xl">
+                             md:text-2xl
+                             lg:mb-6">
                                 {footerMenu.aboutTitle}
                             </h3>
                             <ul>
                                 {footerMenu.about.map((link, i) => (
                                     <li 
                                     key={i}
-                                    className="mb-3">
+                                    className="mb-3
+                                    lg:mb-4 hover:scale-105 transition-all duration-200">
                                         <a 
                                         href="/"
                                         className="font-poppins font-regular text-xs text-white
@@ -128,14 +136,16 @@ export default function Footer () {
                         <div>
                             <h3
                             className="font-playfair font-medium text-base text-white uppercase mb-5
-                             md:text-2xl">
+                             md:text-2xl
+                             lg:mb-6">
                                 {footerMenu.infoTitle}
                             </h3>
                             <ul>
                                 {footerMenu.info.map((link, i) => (
                                     <li 
                                     key={i}
-                                    className="mb-3">
+                                    className="mb-3
+                                    lg:mb-4 hover:scale-105 transition-all duration-200">
                                         <a 
                                         href="/"
                                         className="font-poppins font-regular text-xs text-white
@@ -149,7 +159,8 @@ export default function Footer () {
                         <div>
                             <h3
                             className="font-playfair font-medium text-base text-white uppercase mb-5
-                             md:text-2xl">
+                             md:text-2xl
+                             lg:mb-9">
                                 Social media
                             </h3>
                             <div
@@ -165,7 +176,8 @@ export default function Footer () {
                                     href={soc.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    title={soc.name}>
+                                    title={soc.name}
+                                    className="hover:scale-110 transition-all duration-200">
                                         <img
                                         src={soc.icon}
                                         alt={soc.name}/>
