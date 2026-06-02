@@ -1,15 +1,19 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import axios from 'axios'
 import Loading from "./Loading"
+
+import cardsArrow from "../assets/images/cards-arrow.svg"
 
 export default function SpecialDessert () {
     const [coffees, setCoffees] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const scrollContainerRef = useRef(null);
+
     useEffect(() => {
-        axios.get('http://coffea.local/wp-json/wp/v2/dessert?_embed')
-        .then(response => {
-            setCoffees(response.data);
+        axios.get('http://coffea.local/wp-json/wp/v2/dessert?_embed&per_page=100&orderby=date&order=desc')
+        .then(res => {
+            setCoffees(res.data);
             setLoading(false);
         })
         .catch(err => {
@@ -17,6 +21,28 @@ export default function SpecialDessert () {
             setLoading(false);
         });
     }, []);
+
+     useEffect(() => {
+        if (coffees.length > 0 && scrollContainerRef.current) {
+            setTimeout(() => {
+                scrollContainerRef.current.scrollLeft = 0;
+            }, 100);
+        }
+    }, [coffees]);
+
+    const handleScroll = (direction) => {
+        if (scrollContainerRef.current) {
+
+            const container = scrollContainerRef.current;
+            const scrollAmount = 300;
+    
+            if (direction === 'left') {
+                container.scrollLeft -= scrollAmount;
+            } else {
+                container.scrollLeft += scrollAmount;
+            }
+        }
+    };
 
     if (loading) {
         return (
@@ -26,16 +52,31 @@ export default function SpecialDessert () {
 
     return (
         <section
-        className="pb-15 bg-light-blue md:pb-20">
+        className="pb-15 bg-light-blue 
+        md:pb-20
+        lg:relative">
             <div
-            className="max-w-[1440px] mx-auto px-[5%]">
+            className="max-w-[1440px] mx-auto px-[5%]
+            lg:px-[10%]">
                 <h2
                 className="font-playfair font-semibold text-2xl text-primary text-center uppercase mb-6
                 md:text-3xl md:mb-16">
                     Our Special Dessert
                 </h2>
+                <button
+                onClick={() => handleScroll('left')}
+                className="hidden
+                lg:flex absolute left-10 bottom-58 z-40 hover:scale-110  transition-all duration-200 cursor-pointer"
+                aria-label="Scroll left">
+                    <img
+                    src={cardsArrow}
+                    alt="Left arrow"
+                    className="w-[60px]"/>
+                </button>
                 <div 
-                className="relative flex gap-5 overflow-x-auto scrollbar-none snap-x snap-mandatory scroll-smooth"
+                ref={scrollContainerRef}
+                className="relative w-full flex gap-5 overflow-x-auto scrollbar-none snap-x snap-mandatory scroll-smooth
+                lg:gap-2"
                 style={{WebkitOverflowScrolling: 'touch'}}>
                     {coffees.map((coffee) => {
                         const title = coffee.title.rendered;
@@ -45,11 +86,11 @@ export default function SpecialDessert () {
                         return (
                             <div
                             key={coffee.id}
-                            className="px-4 py-4 bg-off-white border-2 border-beige rounded-2xl snap-center">
+                            className="px-4 py-4 bg-off-white border-2 border-beige rounded-2xl snap-start">
                                 <img
                                 src={imageUrl}
                                 alt={title}
-                                className="max-w-[275px] mb-4"/>
+                                className="max-w-[234px] mb-4"/>
                                 <h3
                                 className="font-outfit font-semibold text-3xl text-primary mb-2">
                                     {title}
@@ -74,6 +115,16 @@ export default function SpecialDessert () {
                         );
                     })}
                 </div>
+                <button
+                onClick={() => handleScroll('right')}
+                className="hidden
+                lg:flex absolute right-10 bottom-58 z-40 hover:scale-110  transition-all duration-200 cursor-pointer"
+                aria-label="Scroll right">
+                    <img
+                    src={cardsArrow}
+                    alt="Right arrow"
+                    className="rotate-180 w-[60px]"/>
+                </button>
             </div>
         </section>
     )

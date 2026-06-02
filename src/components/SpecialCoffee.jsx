@@ -86,7 +86,7 @@ export default function SpecialCoffee () {
                         return (
                             <div
                             key={coffee.id}
-                            className="min-w-[270px] px-4 py-4 bg-off-white border-2 border-beige rounded-2xl snap-start ">
+                            className="min-w-[270px] px-4 py-4 bg-off-white border-2 border-beige rounded-2xl snap-start">
                                 <img
                                 src={imageUrl}
                                 alt={title}
