@@ -62,7 +62,8 @@ export default function Testimonials () {
         <section
         className="py-15 bg-light-blue">
             <div
-            className="max-w-[1440px] mx-auto px-[5%]">
+            className="max-w-[1440px] mx-auto px-[5%]
+            lg:px-[7%]">
                 <h2
                 className="font-reggae font-regular text-2xl text-primary  text-center flex flex-col gap-3 mb-8
                 md:text-3xl">
@@ -79,13 +80,13 @@ export default function Testimonials () {
                     ref={sliderRef}
                     onScroll={handleScroll}
                     className="flex gap-4 overflow-x-auto scrollbar-none snap-x snap-mandatory scroll-smooth
-                    md:gap-21"
+                    md:gap-15"
                     style={{WebkitOverflowScrolling: 'touch'}}>
                         {reviews.map((rev, index) => (
                             <div
                             key={index}
                             className="max-w-[324px] flex-shrink-0 snap-center bg-off-white border border-beige rounded-2xl px-3 py-5
-                            md:max-w-[417px] md:px-7 md:py-7">
+                            md:max-w-[390px] md:px-7 md:py-7">
                                 <div
                                 className="flex items-center justify-between mb-4">
                                     <div
