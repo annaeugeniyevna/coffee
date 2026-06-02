@@ -46,7 +46,8 @@ export default function CoffeeBeans () {
         }}
         className="h-[370px] pt-18">
             <div
-            className="max-w-[1440px] mx-auto px-[5%]">
+            className="max-w-[1440px] mx-auto px-[5%]
+            lg:px-[17%]">
                 <div>
                     <div
                     className="text-center">
