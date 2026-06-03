@@ -11,7 +11,7 @@ export default function SpecialDessert () {
     const scrollContainerRef = useRef(null);
 
     useEffect(() => {
-        axios.get('http://coffea.local/wp-json/wp/v2/dessert?_embed&per_page=100&orderby=date&order=desc')
+        axios.get('https://dev-annaeugeniyevna-coffea.panyheonsite.io/wp-json/wp/v2/dessert?_embed&per_page=100&orderby=date&order=desc')
         .then(res => {
             setCoffees(res.data);
             setLoading(false);

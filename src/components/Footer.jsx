@@ -12,7 +12,7 @@ export default function Footer () {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('http://coffea.local/wp-json/wp/v2/pages?slug=home')
+        axios.get('https://dev-annaeugeniyevna-coffea.panyheonsite.io/wp-json/wp/v2/pages?slug=home')
         .then(res => {
             if (res.data && res.data.length > 0) {
                 const acf = res.data[0].acf;

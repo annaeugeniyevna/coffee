@@ -12,7 +12,7 @@ export default function CoffeeBeans () {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('http://coffea.local/wp-json/wp/v2/pages?slug=home')
+        axios.get('https://dev-annaeugeniyevna-coffea.panyheonsite.io/wp-json/wp/v2/pages?slug=home')
         .then(response => {
             if(response.data && response.data.length > 0) {
                 const page = response.data[0];

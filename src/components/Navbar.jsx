@@ -11,7 +11,7 @@ export default function Navbar () {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     useEffect(() => {
-        axios.get('http://coffea.local/wp-json/menus/v1/menus/header-menu')
+        axios.get('https://dev-annaeugeniyevna-coffea.panyheonsite.io/wp-json/menus/v1/menus/header-menu')
         .then(res => {
             setMenuItems(res.data.items || []);
         })

@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+
 import Loading from "./Loading"
 
 const CategoriesMenu = () => {
@@ -7,7 +8,7 @@ const CategoriesMenu = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('http://coffea.local/wp-json/wp/v2/menu_category')
+        axios.get('https://dev-annaeugeniyevna-coffea.panyheonsite.io/wp-json/wp/v2/menu_category')
         .then((response) => {
             setCategories(response.data);
             setLoading(false);
