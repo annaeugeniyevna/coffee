@@ -8,7 +8,7 @@ const CategoriesMenu = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('https://dev-annaeugeniyevna-coffea.panyheonsite.io/wp-json/wp/v2/menu_category')
+        axios.get('https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-json/wp/v2/menu_category')
         .then((response) => {
             setCategories(response.data);
             setLoading(false);

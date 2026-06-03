@@ -11,7 +11,7 @@ export default function Hero () {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('https://dev-annaeugeniyevna-coffea.panyheonsite.io/wp-json/wp/v2/pages?slug=home')
+        axios.get('https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-json/wp/v2/pages?slug=home')
         .then(res => {
             if (res.data && res.data.length > 0) {
                 const page = res.data[0];
