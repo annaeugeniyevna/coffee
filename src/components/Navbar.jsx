@@ -15,17 +15,6 @@ export default function Navbar () {
         .then(res => {
             setMenuItems(res.data.items || []);
         })
-        .catch(err => {
-            console.error("Помилка завантаження меню з WordPress:", err);
-            setMenuItems([
-                {title: 'Home', url: '/'},
-                {title: 'Coffee', url: '/'},
-                {title: 'Bakery', url: '/'},
-                {title: 'Shop', url: '/'},
-                {title: 'About', url: '/'},
-                {title: 'Login', url: '/'},
-            ]);
-        });
     }, []);
 
     return (

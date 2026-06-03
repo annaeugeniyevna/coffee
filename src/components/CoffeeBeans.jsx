@@ -24,10 +24,6 @@ export default function CoffeeBeans () {
             }
             setLoading(false);
         })
-        .catch(err => {
-            console.error("Помилка:", err);
-            setLoading(false);
-        });
     }, []);
 
     if (loading) {

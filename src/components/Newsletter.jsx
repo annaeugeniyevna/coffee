@@ -25,10 +25,6 @@ export default function Newsletter () {
             }
             setLoading(false);
         })
-        .catch(err => {
-            console.error("Помилка:", err);
-            setLoading(false);
-        });
     }, []);
 
     if (loading) {

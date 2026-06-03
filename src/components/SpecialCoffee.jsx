@@ -16,10 +16,6 @@ export default function SpecialCoffee () {
             setCoffees(res.data);
             setLoading(false);
         })
-        .catch(err => {
-            console.error("Помилка завантаження Special Coffee:", err);
-            setLoading(false);
-        });
     }, []);
 
     useEffect(() => {

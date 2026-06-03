@@ -33,10 +33,6 @@ export default function Footer () {
             }
             setLoading(false);
         })
-        .catch(err => {
-            console.error("Помилка завантаження футера:", err);
-            setLoading(false);
-        });
     }, []);
 
     if (loading || !footerMenu) {

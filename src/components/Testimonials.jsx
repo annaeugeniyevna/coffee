@@ -39,10 +39,6 @@ export default function Testimonials () {
             }
             setLoading(false);
         })
-        .catch(err => {
-            console.error("Помилка завантаження відгуків:", err);
-            setLoading(false);
-        });
     }, []);
 
     const handleScroll = () => {

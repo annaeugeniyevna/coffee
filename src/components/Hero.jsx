@@ -13,7 +13,6 @@ export default function Hero () {
     useEffect(() => {
         axios.get('http://coffea.local/wp-json/wp/v2/pages?slug=home')
         .then(res => {
-            console.log("Ось що прийшло з WP:", res.data);
             if (res.data && res.data.length > 0) {
                 const page = res.data[0];
 
@@ -25,10 +24,6 @@ export default function Hero () {
             }
             setLoading(false);
         })
-        .catch(err => {
-            console.error("Помилка:", err);
-            setLoading(false);
-        });
     }, []);
 
     if (loading) {

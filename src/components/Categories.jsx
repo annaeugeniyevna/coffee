@@ -12,10 +12,6 @@ const CategoriesMenu = () => {
             setCategories(response.data);
             setLoading(false);
         })
-        .catch((error) => {
-            console.error('Помилка завантаження категорій через Axios:', error);
-            setLoading(false);
-        });
     }, []);
 
     if (loading) {
