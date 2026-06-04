@@ -19,6 +19,7 @@ export default function Hero () {
             if (res.data && res.data.length > 0) {
                 const page = res.data[0];
 
+                console.log("ПОВНИЙ ОБ'ЄКТ СТОРІНКИ:", page);
                 setHeroData({
                     title: page.acf?.hero_title || 'Дефолтний заголовок',
                     subtitle: page.acf?.hero_subtitle || 'Дефолтний опис',
