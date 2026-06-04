@@ -11,7 +11,7 @@ export default function Navbar () {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     useEffect(() => {
-        const apiURL = '/api-wp/menus/v1/menus/header-menu';
+        const apiURL = '/api-wp/wp-menus/v1/menus/header-menu';
         console.log("Новий запит через проксі:", apiURL);
 
         axios.get(apiURL)
