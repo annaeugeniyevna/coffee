@@ -11,8 +11,8 @@ export default function Navbar () {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     useEffect(() => {
-        const apiURL = 'https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-json/menus/v1/menus/header-menu';
-        console.log("Запит йде сюди:", apiURL);
+        const apiURL = '/api-wp/menus/v1/menus/header-menu';
+        console.log("Новий запит через проксі:", apiURL);
 
         axios.get(apiURL)
         .then(res => {

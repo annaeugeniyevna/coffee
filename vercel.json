@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "source": "/api-wp/:path*",
+            "destination": "https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-json/:path*"
+        }
+    ]
+}
