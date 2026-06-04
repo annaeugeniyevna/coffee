@@ -43,8 +43,8 @@ export default function Navbar () {
                     className="hidden lg:flex lg:items-center lg:mx-auto lg:gap-10">
                         {menuItems && menuItems.length > 0 ? (
                             menuItems.map((item, index) => {
-                                const itemTitle = item.title || item.name ||'Пункт';
-                                const itemUrl = item.url || item.href || '/';
+                                const itemTitle = item.post_title || item.title || item.name ||'Пункт';
+                                const itemUrl = item.post_name ? `/${item.post_name}` : (item.url || item.href) || '/';
                                 
                                 return (
                                     <a 
