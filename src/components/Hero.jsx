@@ -11,7 +11,7 @@ export default function Hero () {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const apiURL = '/api-wp/acf/v2/pages/122';
+        const apiURL = '/api-wp/acf/v3/pages/122';
 
         axios.get(apiURL)
         .then(res => {
