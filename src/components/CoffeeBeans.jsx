@@ -12,17 +12,22 @@ export default function CoffeeBeans () {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-json/wp/v2/pages?slug=home')
+        const apiURL = '/api-wp/wp/v2/pages?slug=home';
+        
+        axios.get(apiURL)
         .then(response => {
             if(response.data && response.data.length > 0) {
                 const page = response.data[0];
 
                 setBeansData({
                     title: page.acf?.beans_title || 'Дефолтний заголовок',
-                    bgImage: 'http://coffea.local/wp-content/uploads/2026/05/coffee-beans-bg.png'
+                    bgImage: 'https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-content/uploads/2026/05/coffee-beans-bg.png'
                 });
             }
             setLoading(false);
+        })
+        .catch(err => {
+            console.log("Помилка запиту:", err);
         })
     }, []);
 

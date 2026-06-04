@@ -12,7 +12,8 @@ export default function Newsletter () {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-json/wp/v2/pages?slug=home')
+        const apiURL = '/api-wp/wp/v2/pages?slug=home';
+        axios.get(apiURL)
         .then(res => {
             if (res.data && res.data.length > 0) {
                 const page = res.data[0];
@@ -20,10 +21,13 @@ export default function Newsletter () {
                 setNewsData({
                     title: page.acf?.newsletter_title || 'Дефолтний заголовок',
                     text: page.acf?.newsletter_text || 'Дефолтний опис',
-                    bg_image: 'http://coffea.local/wp-content/uploads/2026/05/newsletter-bg.png'
+                    bg_image: 'https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-content/uploads/2026/05/newsletter-bg.png'
                 });
             }
             setLoading(false);
+        })
+        .catch(err => {
+            console.log("Помилка запиту:", err);
         })
     }, []);
 

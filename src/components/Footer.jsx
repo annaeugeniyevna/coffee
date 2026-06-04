@@ -12,7 +12,9 @@ export default function Footer () {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-json/wp/v2/pages?slug=home')
+        const apiURL = '/api-wp/wp/v2/pages?slug=home';
+        
+        axios.get(apiURL)
         .then(res => {
             if (res.data && res.data.length > 0) {
                 const acf = res.data[0].acf;
@@ -32,6 +34,9 @@ export default function Footer () {
                 });
             }
             setLoading(false);
+        })
+         .catch(err => {
+            console.log("Помилка запиту:", err);
         })
     }, []);
 

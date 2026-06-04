@@ -11,7 +11,9 @@ export default function Hero () {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-json/wp/v2/pages?slug=home')
+        const apiURL = '/api-wp/wp/v2/pages?slug=home';
+
+        axios.get(apiURL)
         .then(res => {
             if (res.data && res.data.length > 0) {
                 const page = res.data[0];
@@ -19,10 +21,13 @@ export default function Hero () {
                 setHeroData({
                     title: page.acf?.hero_title || 'Дефолтний заголовок',
                     subtitle: page.acf?.hero_subtitle || 'Дефолтний опис',
-                    bg_image: 'http://coffea.local/wp-content/uploads/2026/05/hero-bg.jpg'
+                    bg_image: 'https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-content/uploads/2026/05/hero-bg.jpg'
                 });
             }
             setLoading(false);
+        })
+         .catch(err => {
+            console.log("Помилка запиту:", err);
         })
     }, []);
 

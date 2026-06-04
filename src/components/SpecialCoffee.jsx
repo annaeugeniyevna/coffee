@@ -11,10 +11,15 @@ export default function SpecialCoffee () {
     const scrollContainerRef = useRef(null);
 
     useEffect(() => {
-        axios.get('https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-json/wp/v2/product?_embed&per_page=100&orderby=date&order=desc')
+        const apiURL = '/api-wp/wp/v2/product?_embed&per_page=100&orderby=date&order=desc';
+
+        axios.get(apiURL)
         .then(res => {
             setCoffees(res.data);
             setLoading(false);
+        })
+        .catch(err => {
+            console.log("Помилка запиту:", err);
         })
     }, []);
 

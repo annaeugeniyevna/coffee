@@ -8,10 +8,15 @@ const CategoriesMenu = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-json/wp/v2/menu_category')
+        const apiURL = '/api-wp/wp/v2/menu_category';
+        
+        axios.get(apiURL)
         .then((response) => {
             setCategories(response.data);
             setLoading(false);
+        })
+        .catch(err => {
+            console.log("Помилка запиту:", err);
         })
     }, []);
 
