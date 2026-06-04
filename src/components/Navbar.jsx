@@ -11,9 +11,15 @@ export default function Navbar () {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     useEffect(() => {
-        axios.get('https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-json/menus/v1/menus/header-menu')
+        const apiURL = 'https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-json/menus/v1/menus/header-menu';
+        console.log("Запит йде сюди:", apiURL);
+
+        axios.get(apiURL)
         .then(res => {
             setMenuItems(res.data.items || []);
+        })
+        .catch(err => {
+            console.log("Помилка запиту:", err);
         })
     }, []);
 
