@@ -82,7 +82,7 @@ export default function SpecialCoffee () {
                     {coffees.map((coffee) => {
                         const title = coffee.title.rendered;
                         const price = coffee.acf?.price || '0';
-                        const imageUrl = coffee._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://via.placeholder.com/300';
+                        const imageUrl = coffee._embedded?.['wp:featuredmedia']?.[0]?.source_url;
 
                         return (
                             <div

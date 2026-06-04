@@ -15,6 +15,7 @@ export default function Hero () {
 
         axios.get(apiURL)
         .then(res => {
+            console.log("Ось що прийшло із севера:", res.data);
             if (res.data && res.data.length > 0) {
                 const page = res.data[0];
 
