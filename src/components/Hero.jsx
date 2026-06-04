@@ -11,11 +11,11 @@ export default function Hero () {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const apiURL = '/api-wp/acf/v3/pages/122';
+        const apiURL = '/api-wp/wp/v2/pages?slug=home';
 
         axios.get(apiURL)
         .then(res => {
-            console.log("Ось що прийшло із ACF:", res.data);
+            console.log("Ось що прийшло із севера:", res.data);
             if (res.data && res.data.length > 0) {
                 const page = res.data[0];
 
