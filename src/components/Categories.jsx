@@ -42,7 +42,7 @@ const CategoriesMenu = () => {
                             {category.acf && category.acf.icon && (
                                 console.log("Повна категорія:", category),
                                 <img
-                                src={category.acf.icon}
+                                src={category.acf.icon.url}
                                 alt={category.name}
                                 className="w-[40px] mx-auto
                                 lg:w-[75px] lg:mb-3"/>
