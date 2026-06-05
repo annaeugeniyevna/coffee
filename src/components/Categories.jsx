@@ -2,6 +2,10 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 
 import Loading from "./Loading"
+import hotCoffee from "../assets/images/icon-hot-coffee.svg"
+import coldCoffee from "../assets/images/icon-cold-coffee.svg"
+import cupCoffee from "../assets/images/icon-cup-coffee.svg"
+import dessert from "../assets/images/icon-dessert.svg"
 
 const CategoriesMenu = () => {
     const [categories, setCategories] = useState([]);
@@ -50,28 +54,28 @@ const CategoriesMenu = () => {
                             key={category.id}>
                                 {category.acf?.icon === 35 &&
                                 <img
-                                src="https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-content/2026/05/icon-hot-coffee.svg"
+                                src={hotCoffee}
                                 alt={category.name}
                                 className="w-[40px] mx-auto
                                 lg:w-[75px] lg:mb-3"/>}
                                 
                                 {category.acf?.icon === 36 &&
                                 <img
-                                src="https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-content/2026/05/icon-could-coffee.svg"
+                                src={coldCoffee}
                                 alt={category.name}
                                 className="w-[40px] mx-auto
                                 lg:w-[75px] lg:mb-3"/>}
 
                                 {category.acf?.icon === 37 &&
                                 <img
-                                src="https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-content/2026/05/icon-cup-coffee.svg"
+                                src={cupCoffee}
                                 alt={category.name}
                                 className="w-[40px] mx-auto
                                 lg:w-[75px] lg:mb-3"/>}
 
                                 {category.acf?.icon === 38 &&
                                 <img
-                                src="https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-content/2026/05/icon-dessert.svg"
+                                src={dessert}
                                 alt={category.name}
                                 className="w-[40px] mx-auto
                                 lg:w-[75px] lg:mb-3"/>}
@@ -81,7 +85,7 @@ const CategoriesMenu = () => {
                                     {category.name}
                                 </p>
                             </div>
-                    ))};
+                    ))}
                 </div>
             </div>
         </section>
