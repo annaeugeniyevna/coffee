@@ -16,7 +16,7 @@ export default function Navbar () {
 
         axios.get(apiURL)
         .then(res => {
-            setMenuItems(res.data.items || []);
+            setMenuItems(res.data || []);
         })
         .catch(err => {
             console.log("Помилка запиту:", err);
@@ -44,7 +44,7 @@ export default function Navbar () {
                         {menuItems && menuItems.length > 0 ? (
                             menuItems.map((item, index) => {
                                 const itemTitle = item.post_title || item.title || item.name ||'Пункт';
-                                const itemUrl = item.post_name ? `/${item.post_name}` : (item.url || item.href) || '/';
+                                const itemUrl = item.post_name ? `/${item.post_name}` : (item.url || item.href || '/');
                                 
                                 return (
                                     <a 
@@ -115,8 +115,8 @@ export default function Navbar () {
                         className="flex flex-col gap-5 items-center">
                         {menuItems && menuItems.length > 0 ? (
                             menuItems.map((item, index) => {
-                                const itemTitle = item.title || item.name || 'Пункт';
-                                const itemUrl = item.url || item.href || '/';
+                                const itemTitle = item.post_title || item.title || item.name || 'Пункт';
+                                const itemUrl = item.post_name ? `/${item.post_name}` : (item.url || item.href || '/');
 
                                 return (
                                     <a
@@ -135,19 +135,6 @@ export default function Navbar () {
                         )}
                         </div>
                     </div>
-
-                        {/* Menu for desktop
-                        <div
-                        className="hidden">
-                            {menuItems.map((item, index) => (
-                                <a
-                                key={index}
-                                href={item.url}
-                                className="font-poppins font-medium text-lg text-white uppercase">
-                                    {item.title}
-                                </a>
-                            ))}
-                        </div> */}
                 </nav>
             </div>
         </header>
