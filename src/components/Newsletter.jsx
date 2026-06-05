@@ -64,8 +64,8 @@ export default function Newsletter () {
                     className="flex flex-col gap-3
                     md:flex-row object-cover">
                         <div
-                        className="flex gap-2 items-center flex-grow bg-off-white rounded-full px-6 py-3 mx-auto
-                        md:min-w-[390px]">
+                        className="flex gap-2 items-center flex-grow flex-shrink-0 bg-off-white rounded-full px-6 py-3 mx-auto
+                        md:w-[390px]">
                             <img
                             src={emailIcon}
                             alt="Email icon"/>
