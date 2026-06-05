@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-body {
-  overflow-x: hidden;
-}
-
-
 @font-face {
   font-family: 'Playfair Display';
   src: url('./assets/fonts/PlayfairDisplay-Medium.woff2') format('woff2');
