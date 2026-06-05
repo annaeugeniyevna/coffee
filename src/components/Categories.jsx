@@ -41,6 +41,9 @@ const CategoriesMenu = () => {
                         key={category.id}>
                             {category.acf && category.acf.icon && (
                                 console.log("Повна категорія:", category),
+                                console.log("Дані категорії:", category.name),
+                                console.log("ACF дані:", category.acf),
+                                console.log("Значення іконки:", category.acf?.icon),
                                 <img
                                 src={category.acf.icon.url}
                                 alt={category.name}
