@@ -45,7 +45,7 @@ const CategoriesMenu = () => {
                                 console.log("ACF дані:", category.acf),
                                 console.log("Значення іконки:", category.acf?.icon),
                                 <img
-                                src={category.icon.url}
+                                src={category.icon_url}
                                 alt={category.name}
                                 className="w-[40px] mx-auto
                                 lg:w-[75px] lg:mb-3"/>
