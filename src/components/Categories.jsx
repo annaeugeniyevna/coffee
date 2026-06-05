@@ -40,7 +40,7 @@ const CategoriesMenu = () => {
                         key={category.id}>
                             {category.acf && category.acf.icon && (
                                 <img
-                                src={`http://coffea.local/wp-content/uploads/2026/05/icon-${category.slug}.svg`}
+                                src={category.acf.icon}
                                 alt={category.name}
                                 className="w-[40px] mx-auto
                                 lg:w-[75px] lg:mb-3"/>
