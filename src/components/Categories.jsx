@@ -25,6 +25,7 @@ const CategoriesMenu = () => {
             <Loading/>
         )
     }
+
     return (
         <section className="bg-beige py-5
         lg:py-12">
@@ -39,6 +40,7 @@ const CategoriesMenu = () => {
                         <div
                         key={category.id}>
                             {category.acf && category.acf.icon && (
+                                console.log("Повна категорія:", category),
                                 <img
                                 src={category.acf.icon}
                                 alt={category.name}
