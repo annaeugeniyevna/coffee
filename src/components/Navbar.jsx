@@ -12,14 +12,13 @@ export default function Navbar () {
 
     useEffect(() => {
         const apiURL = '/api-wp/wp-menus/v1/menus/header-menu';
-        console.log("Новий запит через проксі:", apiURL);
 
         axios.get(apiURL)
         .then(res => {
             setMenuItems(res.data || []);
         })
         .catch(err => {
-            console.log("Помилка запиту:", err);
+            console.error("Помилка запиту:", err);
         })
     }, []);
 

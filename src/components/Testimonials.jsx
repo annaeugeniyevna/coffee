@@ -42,7 +42,7 @@ export default function Testimonials () {
             setLoading(false);
         })
         .catch(err => {
-            console.log("Помилка запиту:", err);
+            console.error("Помилка запиту:", err);
         })
     }, []);
 

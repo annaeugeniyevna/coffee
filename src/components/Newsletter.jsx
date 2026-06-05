@@ -27,7 +27,7 @@ export default function Newsletter () {
             setLoading(false);
         })
         .catch(err => {
-            console.log("Помилка запиту:", err);
+            console.error("Помилка запиту:", err);
         })
     }, []);
 

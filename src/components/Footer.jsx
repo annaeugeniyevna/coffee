@@ -36,7 +36,7 @@ export default function Footer () {
             setLoading(false);
         })
          .catch(err => {
-            console.log("Помилка запиту:", err);
+            console.error("Помилка запиту:", err);
         })
     }, []);
 

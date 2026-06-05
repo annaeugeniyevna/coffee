@@ -27,7 +27,7 @@ export default function CoffeeBeans () {
             setLoading(false);
         })
         .catch(err => {
-            console.log("Помилка запиту:", err);
+            console.error("Помилка запиту:", err);
         })
     }, []);
 

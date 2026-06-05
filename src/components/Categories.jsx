@@ -20,7 +20,7 @@ const CategoriesMenu = () => {
             setLoading(false);
         })
         .catch(err => {
-            console.log("Помилка запиту:", err);
+            console.error("Помилка запиту:", err);
         })
     }, []);
 
@@ -41,15 +41,6 @@ const CategoriesMenu = () => {
                 md:gap-15
                 lg:gap-35">
                     {categories.map((category) => (
-                    // const iconId = category.acf?.icon;
-                    //     const iconMap = {
-                    //         35: 'https://dev-annaneugeniyevna-coffea.pantheonsite.io/wp-content/uploads/2026/05/icon-hot-coffee.svg',
-                    //         36: 'https://dev-annaneugeniyevna-coffea.pantheonsite.io/wp-content/uploads/2026/05/icon-cold-coffee.svg',
-                    //         37: 'https://dev-annaneugeniyevna-coffea.pantheonsite.io/wp-content/uploads/2026/05/icon-cup-coffee.svg',
-                    //         38: 'https://dev-annaneugeniyevna-coffea.pantheonsite.io/wp-content/uploads/2026/05/icon-dessert.svg'
-                    //     };
-                    //     const iconUrl = iconMap[iconId];
-
                             <div
                             key={category.id}>
                                 {category.acf?.icon === 35 &&
