@@ -37,26 +37,51 @@ const CategoriesMenu = () => {
                 md:gap-15
                 lg:gap-35">
                     {categories.map((category) => (
-                        <div
-                        key={category.id}>
-                            {category.acf && category.acf.icon && (
-                                console.log("Повна категорія:", category),
-                                console.log("Дані категорії:", category.name),
-                                console.log("ACF дані:", category.acf),
-                                console.log("Значення іконки:", category.acf?.icon),
+                    // const iconId = category.acf?.icon;
+                    //     const iconMap = {
+                    //         35: 'https://dev-annaneugeniyevna-coffea.pantheonsite.io/wp-content/uploads/2026/05/icon-hot-coffee.svg',
+                    //         36: 'https://dev-annaneugeniyevna-coffea.pantheonsite.io/wp-content/uploads/2026/05/icon-cold-coffee.svg',
+                    //         37: 'https://dev-annaneugeniyevna-coffea.pantheonsite.io/wp-content/uploads/2026/05/icon-cup-coffee.svg',
+                    //         38: 'https://dev-annaneugeniyevna-coffea.pantheonsite.io/wp-content/uploads/2026/05/icon-dessert.svg'
+                    //     };
+                    //     const iconUrl = iconMap[iconId];
+
+                            <div
+                            key={category.id}>
+                                {category.acf?.icon === 35 &&
                                 <img
-                                src={category.icon_url}
+                                src="https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-content/2026/05/icon-hot-coffee.svg"
                                 alt={category.name}
                                 className="w-[40px] mx-auto
-                                lg:w-[75px] lg:mb-3"/>
-                            )}
-                            <p
-                            className="font-poppins font-medium text-xs text-mud text-center
-                            lg:text-base">
-                                {category.name}
-                            </p>
-                        </div>
-                    ))}
+                                lg:w-[75px] lg:mb-3"/>}
+                                
+                                {category.acf?.icon === 36 &&
+                                <img
+                                src="https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-content/2026/05/icon-could-coffee.svg"
+                                alt={category.name}
+                                className="w-[40px] mx-auto
+                                lg:w-[75px] lg:mb-3"/>}
+
+                                {category.acf?.icon === 37 &&
+                                <img
+                                src="https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-content/2026/05/icon-cup-coffee.svg"
+                                alt={category.name}
+                                className="w-[40px] mx-auto
+                                lg:w-[75px] lg:mb-3"/>}
+
+                                {category.acf?.icon === 38 &&
+                                <img
+                                src="https://dev-annaeugeniyevna-coffea.pantheonsite.io/wp-content/2026/05/icon-dessert.svg"
+                                alt={category.name}
+                                className="w-[40px] mx-auto
+                                lg:w-[75px] lg:mb-3"/>}
+                                <p
+                                className="font-poppins font-medium text-xs text-mud text-center
+                                lg:text-base">
+                                    {category.name}
+                                </p>
+                            </div>
+                    ))};
                 </div>
             </div>
         </section>
