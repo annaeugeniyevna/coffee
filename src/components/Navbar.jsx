@@ -82,8 +82,8 @@ export default function Navbar () {
                             {/* Logic for Search */}
                             {isSearchOpen && (
                                 <div
-                                className=" absolute inset-0 bg-white rounded-full z-50 flex items-center text-center gap-4 px-6 py-3
-                                 md:h-[45px] md:mt-3">
+                                className="w-full h-45px absolute inset-0 bg-white rounded-full z-50 flex items-center text-center gap-4 px-6 py-3
+                                 md:mt-3">
                                     <input
                                     type="text"
                                     placeholder="Search..."
