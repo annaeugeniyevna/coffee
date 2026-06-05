@@ -82,9 +82,9 @@ export default function Navbar () {
                             {/* Logic for Search */}
                             {isSearchOpen && (
                                 <div 
-                                className="flex items-center">
+                                className="flex items-center justify-center mt-1 ">
                                     <div
-                                    className="w-[300px] h-[45px] absolute inset-0 bg-white rounded-full z-50 flex items-center text-center gap-4 px-6 py-3
+                                    className="w-full h-[45px] absolute inset-0 bg-white rounded-full z-50 flex items-center text-center gap-4 px-6 py-3
                                     md:mt-3">
                                         <input
                                         type="text"
