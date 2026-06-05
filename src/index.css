@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-* {
-  outline: 1px solid red;
-}
-
 @font-face {
   font-family: 'Playfair Display';
   src: url('./assets/fonts/PlayfairDisplay-Medium.woff2') format('woff2');
