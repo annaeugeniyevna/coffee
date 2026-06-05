@@ -24,7 +24,7 @@ export default function Navbar () {
 
     return (
         <header
-        className="bg-black/60 fixed top-0 w-full z-[999]">
+        className="bg-black/60 fixed top-0 inset-x-0 z-[999]">
             <div
             className="max-w-[1440px] mx-auto px-[5%]
             lg:px-[7%]">
@@ -32,7 +32,7 @@ export default function Navbar () {
                 className="relative flex justify-between items-center py-3">
                     <div>
                         <a
-                        href="#"
+                        href="/"
                         className="font-playfair font-bold text-3xl text-white">
                             coffee
                         </a>
@@ -83,7 +83,7 @@ export default function Navbar () {
                             {isSearchOpen && (
                                 <div
                                 className="w-full h-45px absolute inset-0 bg-white rounded-full z-50 flex items-center text-center gap-4 px-6 py-3
-                                 md:mt-3">
+                                md:mt-3">
                                     <input
                                     type="text"
                                     placeholder="Search..."
