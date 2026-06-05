@@ -24,7 +24,7 @@ export default function Navbar () {
 
     return (
         <header
-        className="bg-black/60 fixed top-0 inset-x-0 z-[999]">
+        className="bg-black/60 fixed top-0 inset-x-0 z-[500]">
             <div
             className="max-w-[1440px] mx-auto px-[5%]
             lg:px-[7%]">
@@ -82,7 +82,7 @@ export default function Navbar () {
                             {/* Logic for Search */}
                             {isSearchOpen && (
                                 <div 
-                                className="flex items-center justify-center mt-1 ">
+                                className="relative flex items-center justify-center mt-2 z-[999]">
                                     <div
                                     className="w-full h-[45px] absolute inset-0 bg-white rounded-full z-50 flex items-center text-center gap-4 px-6 py-3
                                     md:mt-3">
