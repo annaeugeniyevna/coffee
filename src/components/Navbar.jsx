@@ -64,7 +64,7 @@ export default function Navbar () {
                         <div>
                             {/* Button for mobile */}
                             <button 
-                                className="block relative z-[1000]
+                                className="block relative z-[600]
                                 lg:hidden"
                                 onClick={() => { 
                                     setIsOpen(!isOpen)}}>
@@ -82,9 +82,9 @@ export default function Navbar () {
                             {/* Logic for Search */}
                             {isSearchOpen && (
                                 <div 
-                                className="relative flex items-center justify-center mt-2 z-[999]">
+                                className="flex items-center justify-center mt-2">
                                     <div
-                                    className="w-full h-[45px] absolute inset-0 bg-white rounded-full z-50 flex items-center text-center gap-4 px-6 py-3
+                                    className="w-full h-[45px] absolute inset-0 bg-white rounded-full z-999 flex items-center text-center gap-4 px-6 py-3
                                     md:mt-3">
                                         <input
                                         type="text"
