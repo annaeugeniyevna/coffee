@@ -81,20 +81,23 @@ export default function Navbar () {
 
                             {/* Logic for Search */}
                             {isSearchOpen && (
-                                <div
-                                className="w-[200px] h-[45px] absolute inset-0 bg-white rounded-full z-50 flex items-center text-center gap-4 px-6 py-3
-                                md:mt-3">
-                                    <input
-                                    type="text"
-                                    placeholder="Search..."
-                                    className="w-full focus:outline-none placeholder:font-outfit placeholder:font-medium placeholder:text-lg placeholder:text-light-gray"
-                                    autoFocus/>
-                                    <button
-                                    onClick={() => setIsSearchOpen(false)}
-                                    className="text-light-gray">
-                                        <X
-                                        className="w-8 h-8"/>
-                                    </button>
+                                <div 
+                                className="flex items-center">
+                                    <div
+                                    className="w-[300px] h-[45px] absolute inset-0 bg-white rounded-full z-50 flex items-center text-center gap-4 px-6 py-3
+                                    md:mt-3">
+                                        <input
+                                        type="text"
+                                        placeholder="Search..."
+                                        className="w-full focus:outline-none placeholder:font-outfit placeholder:font-medium placeholder:text-lg placeholder:text-light-gray"
+                                        autoFocus/>
+                                        <button
+                                        onClick={() => setIsSearchOpen(false)}
+                                        className="text-light-gray">
+                                            <X
+                                            className="w-8 h-8"/>
+                                        </button>
+                                    </div>
                                 </div>
                             )}
                         </div>
