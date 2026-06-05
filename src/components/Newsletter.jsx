@@ -73,7 +73,7 @@ export default function Newsletter () {
                             type="email"
                             placeholder="Email address"
                             required
-                            className="font-poppins font-semibold text-base text-primary focus:outline-none placeholder:font-poppins placeholder:font-semibold placeholder:text-base placeholder:text-primary"/>
+                            className="flex-1 font-poppins font-semibold text-base text-primary focus:outline-none placeholder:font-poppins placeholder:font-semibold placeholder:text-base placeholder:text-primary"/>
                         </div>
                         <button
                         type="submit"
